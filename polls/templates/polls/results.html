@@ -1,0 +1,4 @@
+{% for result in question.choice_set.all %}
+<li>{{result.choice_text}} has {{result.votes}} vote{{ result.votes|pluralize }}</li>
+{%endfor%}
+<a href="{%url 'polls:detail' question.id%}">vote again?</a>
